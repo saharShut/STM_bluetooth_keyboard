@@ -35,36 +35,14 @@
 
 // ----------------------------------------------------------------------------
 //
-// Standalone STM32F1 led blink sample (trace via NONE).
-//
-// In debug configurations, demonstrate how to print a greeting message
-// on the trace device. In release configurations the message is
-// simply discarded.
-//
-// Then demonstrates how to blink a led with 1 Hz, using a
-// continuous loop and SysTick delays.
+// Standalone STM32F1 empty sample (trace via DEBUG).
 //
 // Trace support is enabled by adding the TRACE macro definition.
-// By default the trace messages are forwarded to the NONE output,
+// By default the trace messages are forwarded to the DEBUG output,
 // but can be rerouted to any device or completely suppressed, by
 // changing the definitions required in system/src/diag/trace-impl.c
-// (currently OS_USE_TRACE_SEMIHOSTING_DEBUG/_STDOUT).
+// (currently OS_USE_TRACE_ITM, OS_USE_TRACE_SEMIHOSTING_DEBUG/_STDOUT).
 //
-// The external clock frequency is specified as a preprocessor definition
-// passed to the compiler via a command line option (see the 'C/C++ General' ->
-// 'Paths and Symbols' -> the 'Symbols' tab, if you want to change it).
-// The value selected during project creation was HSE_VALUE=8000000.
-//
-// Note: The default clock settings take the user defined HSE_VALUE and try
-// to reach the maximum possible system clock. For the default 8 MHz input
-// the result is guaranteed, but for other values it might not be possible,
-// so please adjust the PLL settings in system/src/cmsis/system_stm32f1xx.c
-//
-
-#include "matrix.h"
-#include "sender.h"
-#include "array_exec.h"
-#include <list>
 
 // ----- main() ---------------------------------------------------------------
 
@@ -86,6 +64,5 @@ main(int argc, char* argv[])
 	// Infinite loop, never return.
 	return 0;
 }
-
 
 // ----------------------------------------------------------------------------
